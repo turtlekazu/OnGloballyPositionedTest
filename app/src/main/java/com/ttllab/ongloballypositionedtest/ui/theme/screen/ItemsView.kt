@@ -6,6 +6,8 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.scale
+import androidx.compose.ui.graphics.graphicsLayer
 
 @Composable
 fun ItemsView(
@@ -15,6 +17,11 @@ fun ItemsView(
     Box(
         modifier = modifier
             .fillMaxSize()
+//            .graphicsLayer { // Uncomment this for scaling check
+//                scaleX = 2f
+//                scaleY = 2f
+//            }
+//            .scale(2f) // Uncomment this for scaling check
     ) {
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
