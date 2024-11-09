@@ -1,9 +1,9 @@
 # OnGloballyPositionedTest
-OnGloballyPositionedTest is a GitHub repository designed to observe and test the behavior of the onGloballyPositioned modifier in Jetpack Compose. This project includes a custom modifier, .trackable, which collects and manages the coordinates of UI elements displayed on the screen.
+OnGloballyPositionedTest is a GitHub repository designed to observe and test the behavior of the `.onGloballyPositioned` modifier in Jetpack Compose. This project includes a custom modifier, `.trackable`, which collects and manages the coordinates of UI elements displayed on the screen.
 
 ## Features
-By applying the `.trackable modifier`, you can retrieve the on-screen coordinates of UI elements.
-The collected coordinates are stored in a ConcurrentHashMap, enabling real-time management of UI element positions.
+By applying the `.trackable` modifier, you can retrieve the on-screen coordinates of UI elements.
+The collected coordinates are stored in a `ConcurrentHashMap`, enabling real-time management of UI element positions.
 When a UI element is removed from the screen, it is automatically removed from the map using `onDispose`, optimizing resource usage.
 Using the stored map of UI elements, a real-time overlay outline is dynamically updated and displayed around each tracked UI element.
 
