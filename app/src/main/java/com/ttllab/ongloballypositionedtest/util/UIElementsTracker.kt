@@ -1,4 +1,4 @@
-package com.ttllab.ongloballypositionedtest
+package com.ttllab.ongloballypositionedtest.util
 
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.layout.LayoutCoordinates
@@ -10,8 +10,13 @@ object UIElementsTracker {
     val elements: Map<String, UIElementData> get() = _elements
 
     // 要素を追加または更新するメソッド
-    fun updateElement(id: String, coordinates: LayoutCoordinates, zIndex: Float = 0f) {
-        val value = UIElementData(coordinates, zIndex)
+    fun updateElement(
+        id: String,
+        coordinates: LayoutCoordinates,
+        zIndex: Float = 0f,
+        action: () -> Unit = {}
+    ) {
+        val value = UIElementData(coordinates, zIndex, action)
         _elements[id] = value
     }
 
@@ -20,13 +25,8 @@ object UIElementsTracker {
         _elements.remove(id)
     }
 
-    // 全要素を取得するメソッド（デバッグや確認用）
-    fun getAllElements(): Map<String, UIElementData> {
-        return _elements.toMap()  // 不変Mapに変換
-    }
-
     // 特定のIDの要素を取得するメソッド
-    fun getElement(id: String): UIElementData? {
+    fun getElementById(id: String): UIElementData? {
         return _elements[id]
     }
 
@@ -45,5 +45,6 @@ object UIElementsTracker {
 
 data class UIElementData(
     val coordinates: LayoutCoordinates,
-    val zIndex: Float = 0f
+    val zIndex: Float = 0f,
+    val action: () -> Unit = {}
 )
