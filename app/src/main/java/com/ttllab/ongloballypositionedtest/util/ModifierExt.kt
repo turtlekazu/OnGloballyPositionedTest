@@ -1,6 +1,5 @@
 package com.ttllab.ongloballypositionedtest.util
 
-import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.Modifier
@@ -23,6 +22,5 @@ fun Modifier.trackable(
 
     return this then Modifier.onGloballyPositioned { coordinates ->
         UIElementsTracker.updateElement(id.toString(), coordinates, zIndex, action)
-        Log.d("ItemView", "elements size = ${UIElementsTracker.elements.size}")
     }
 }

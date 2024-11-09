@@ -23,9 +23,6 @@ fun PagerItemsView(
             pageIndex = page,
             modifier = Modifier
                 .graphicsLayer {
-                    // Calculate the absolute offset for the current page from the
-                    // scroll position. We use the absolute value which allows us to mirror
-                    // any effects for both directions
                     val pageOffset = (
                             (pagerState.currentPage - page) + pagerState
                                 .currentPageOffsetFraction

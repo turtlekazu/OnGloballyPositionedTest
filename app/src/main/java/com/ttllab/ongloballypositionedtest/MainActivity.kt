@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.Surface
 import com.ttllab.ongloballypositionedtest.ui.theme.OnGloballyPositionedTestTheme
+import com.ttllab.ongloballypositionedtest.ui.theme.screen.MainScreen
 import com.ttllab.ongloballypositionedtest.ui.theme.screen.PagerItemsView
 
 class MainActivity : ComponentActivity() {
@@ -15,7 +16,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             OnGloballyPositionedTestTheme {
                 Surface {
-                    PagerItemsView()
+                    MainScreen()
                 }
             }
         }

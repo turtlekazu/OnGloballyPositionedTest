@@ -12,7 +12,10 @@ fun ItemsView(
     pageIndex: Int,
     modifier: Modifier = Modifier,
 ) {
-    Box(modifier = modifier.fillMaxSize()) {
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+    ) {
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
         ) {
